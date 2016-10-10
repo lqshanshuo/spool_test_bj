@@ -68,6 +68,9 @@ function QuTuoViewModel() {
         var zengchu_benefits = Number(newValue.zengchu_benefits) || 0;
         var development_allowance = Number(newValue.development_allowance) || 0;
 
+        var other_income_percent = Number(newValue.other_income_percent.replace("%", "")) || 0;
+        self.other_income_percent(other_income_percent);
+
         self.person.renewal_commission(renewal_commission);
         self.qu.educate_benefits(educate_benefits);
         self.ke.zengke_benefits(zengke_benefits);
@@ -147,9 +150,9 @@ function Person(level) {
         var shuangzhi_premium = Number(self.shuangzhi_premium()) || 0;
         var other_premium = Number(self.other_premium()) || 0;
 
-        var performance = caifu_premium*0.14 + yingyue_premium*0.26 +
-                shuangfu_premium*1.43 + shuangzhi_premium*0.73 +
-                other_premium*0.9;
+        var performance = caifu_premium * 0.14 + yingyue_premium * 0.26 +
+                shuangfu_premium * 1.43 + shuangzhi_premium * 0.73 +
+                other_premium * 0.9;
 
 //        console.log("performance = " + performance)
 
@@ -433,7 +436,7 @@ function Group(type, level) {
 
         // var allowance = performance * coefficient1;
 
-        var huodonglv_coefficient = self.huodonglv_coefficient()||1;
+        var huodonglv_coefficient = self.huodonglv_coefficient() || 1;
         var allowance = performance * coefficient1 * huodonglv_coefficient;
 
         if (self.type() == "qu") {
@@ -552,11 +555,11 @@ function getTrainningAllowance(institution, time, performance) {
     var allowance = 0;
 //    var time_arr = time.split("/") || [];
 //    console.log("time_arr = " + time_arr);
-    var year = Number(time.substr(0,4)) || 0;
-    var month = Number(time.substr(4,2)) || 0;
+    var year = Number(time.substr(0, 4)) || 0;
+    var month = Number(time.substr(4, 2)) || 0;
 //
 
-    month = 14-month;
+    month = 14 - month;
 //    console.log("year = " + year);
 //    console.log("time = " + time);
 //    console.log("institution = " + institution);
@@ -738,16 +741,16 @@ function getExcessBonus(level, performance) {
             x = 1;
         } else if (excess_rate >= 1.4 && excess_rate < 1.6) {
             x = 2;
-        // } else if (excess_rate >= 1.8 && excess_rate < 2.0) {
-        //     x = 3;
-        // } else if (excess_rate >= 2.0) {
-        //     x = 4;
-        // }
-      } else if (excess_rate >= 1.6 && excess_rate < 2.0) {
-          x = 3;
-      } else if (excess_rate >= 2.0) {
-          x = 4;
-      }
+            // } else if (excess_rate >= 1.8 && excess_rate < 2.0) {
+            //     x = 3;
+            // } else if (excess_rate >= 2.0) {
+            //     x = 4;
+            // }
+        } else if (excess_rate >= 1.6 && excess_rate < 2.0) {
+            x = 3;
+        } else if (excess_rate >= 2.0) {
+            x = 4;
+        }
         return x;
     };
 

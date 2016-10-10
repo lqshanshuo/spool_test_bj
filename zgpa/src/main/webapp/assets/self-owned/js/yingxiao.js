@@ -442,7 +442,7 @@ function computeTrainingAllawance(yingXiaoViewModel) {
     var userPOJO = yingXiaoViewModel.userPOJO();
 //    console.log("computeTrainingAllawance in");
     var type_3_are_arr = ["张家口", "衡水", "承德", "邢台"];
-    var time = userPOJO.begin_time.split("/") || [];
+    var time = userPOJO.begin_time.split("-") || [];
     var FYC = yingXiaoViewModel.person.initial_commission();
     var trainning_allowance = 0;
     var year = Number(time[2]) || 0;

@@ -235,12 +235,6 @@
                                                             <div class="col-xs-3" style="padding-left: 5px;padding-right:0px">
                                                                 <input type="text" style="color:black; padding-left: 2px;" class="form-control" placeholder="0" disabled  data-bind="value:manage_allowance">
                                                             </div>
-                                                            <!--                                    <label class="col-xs-2 control-label text-right" style="padding-left:0px;padding-right:0px;margin-top: 3px;">
-                                                                                                    <span style="font-weight: bold;font-size: 12px;">育成利益:</span>
-                                                                                                </label>
-                                                                                                <div class="col-xs-4" style="padding-left: 5px;">
-                                                                                                    <input type="text" style="color:black; padding-left: 2px;" class="form-control" placeholder="0" disabled   data-bind="value:educate_benefits">
-                                                                                                </div>-->
                                                         </div>
                                                     </form>
                                                 </div>
@@ -450,8 +444,6 @@
                                                             if (yingXiaoViewModel.isGroupDisplay()) {
                                                                 //直接管理津贴
                                                                 income += yingXiaoViewModel.group.manage_allowance();
-                                                                //育成利益
-                                                                income += yingXiaoViewModel.group.educate_benefits();
 
                                                                 //                    console.log("个人 + 组： " + income);
 
@@ -459,11 +451,7 @@
 
                                                             if (yingXiaoViewModel.isPartDisplay()) {
                                                                 //经理津贴
-                                                                income += yingXiaoViewModel.part.manager_allowance();
-                                                                //增部利益
-                                                                income += yingXiaoViewModel.part.increasing_part_benefits();
-                                                                //总监利益
-                                                                income += yingXiaoViewModel.part.director_benefits();
+                                                                income += yingXiaoViewModel.part.manage_allowance();
 
                                                                 //                    console.log("个人 + 组 + 部： " + income);
 

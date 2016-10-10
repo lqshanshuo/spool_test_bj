@@ -64,7 +64,7 @@ function YingXiaoViewModel() {
         if (!newValue) {
             return;
         }
-        self.other_income_percent(newValue.other_income_percent);
+        self.other_income_percent(newValue.other_income_percent==null?0:newValue.other_income_percent);
 //        self.person.renewal_commission(newValue.renewal_history); //续佣
         self.person.trainning_allowance(getTrainningAllowance(self)); //训练津贴
 
