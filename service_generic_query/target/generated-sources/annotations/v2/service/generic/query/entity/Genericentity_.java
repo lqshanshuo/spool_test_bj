@@ -8,7 +8,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import v2.service.generic.query.entity.Genericentity;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-10-02T17:27:10")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-10-10T16:20:22")
 @StaticMetamodel(Genericentity.class)
 public class Genericentity_ { 
 

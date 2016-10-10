@@ -63,15 +63,6 @@ public class Yingxiaostaffentity implements Serializable {
     private String begin_rank;                          //入司职级
     private String begin_time;                          //入司时间
     private String id_last_four;                        //证件号后四位
-    private String renewal_history;                     //续期历史数据
-    private String direct_group_count;                  //直接小组数
-    private String history_num_1;                       //历史数据1
-    private String indirect_group_count;                //间接小组数
-    private String history_num_2;                       //历史数据2
-    private String subordinate_part_num;                //下辖部数量
-    private String history_num_3;                       //历史数据3
-    private String other_income_percent;                //其他收入占比
-    private String history_num_4;                       //历史数据4
 
     private String str1;
     private String str2;
@@ -300,78 +291,6 @@ public class Yingxiaostaffentity implements Serializable {
         this.id_last_four = id_last_four;
     }
 
-    public String getRenewal_history() {
-        return renewal_history;
-    }
-
-    public void setRenewal_history(String renewal_history) {
-        this.renewal_history = renewal_history;
-    }
-
-    public String getDirect_group_count() {
-        return direct_group_count;
-    }
-
-    public void setDirect_group_count(String direct_group_count) {
-        this.direct_group_count = direct_group_count;
-    }
-
-    public String getHistory_num_1() {
-        return history_num_1;
-    }
-
-    public void setHistory_num_1(String history_num_1) {
-        this.history_num_1 = history_num_1;
-    }
-
-    public String getIndirect_group_count() {
-        return indirect_group_count;
-    }
-
-    public void setIndirect_group_count(String indirect_group_count) {
-        this.indirect_group_count = indirect_group_count;
-    }
-
-    public String getHistory_num_2() {
-        return history_num_2;
-    }
-
-    public void setHistory_num_2(String history_num_2) {
-        this.history_num_2 = history_num_2;
-    }
-
-    public String getSubordinate_part_num() {
-        return subordinate_part_num;
-    }
-
-    public void setSubordinate_part_num(String subordinate_part_num) {
-        this.subordinate_part_num = subordinate_part_num;
-    }
-
-    public String getHistory_num_3() {
-        return history_num_3;
-    }
-
-    public void setHistory_num_3(String history_num_3) {
-        this.history_num_3 = history_num_3;
-    }
-
-    public String getOther_income_percent() {
-        return other_income_percent;
-    }
-
-    public void setOther_income_percent(String other_income_percent) {
-        this.other_income_percent = other_income_percent;
-    }
-
-    public String getHistory_num_4() {
-        return history_num_4;
-    }
-
-    public void setHistory_num_4(String history_num_4) {
-        this.history_num_4 = history_num_4;
-    }
-
     public String getStr1() {
         return str1;
     }
@@ -481,8 +400,6 @@ public class Yingxiaostaffentity implements Serializable {
         hash = 61 * hash + Objects.hashCode(this.begin_rank);
         hash = 61 * hash + Objects.hashCode(this.begin_time);
         hash = 61 * hash + Objects.hashCode(this.id_last_four);
-        hash = 61 * hash + Objects.hashCode(this.renewal_history);
-        hash = 61 * hash + Objects.hashCode(this.direct_group_count);
         return hash;
     }
 
@@ -525,12 +442,6 @@ public class Yingxiaostaffentity implements Serializable {
         if (!Objects.equals(this.id_last_four, other.id_last_four)) {
             return false;
         }
-        if (!Objects.equals(this.renewal_history, other.renewal_history)) {
-            return false;
-        }
-        if (!Objects.equals(this.direct_group_count, other.direct_group_count)) {
-            return false;
-        }
         if (!Objects.equals(this.id, other.id)) {
             return false;
         }
@@ -541,7 +452,7 @@ public class Yingxiaostaffentity implements Serializable {
 
     @Override
     public String toString() {
-        return "Staffentity{" + "id=" + id + ", parentId=" + parentId + ", name=" + name + ", parentName=" + parentName + ", category=" + category + ", description=" + description + ", type=" + type + ", status=" + status + ", creator=" + creator + ", lastModifier=" + lastModifier + ", createTime=" + createTime + ", lastUpdateTime=" + lastUpdateTime + ", enabled=" + enabled + ", valid=" + valid + ", deleted=" + deleted + ", priority=" + priority + ", modifyCount=" + modifyCount + ", institution=" + institution + ", sale_department_code=" + sale_department_code + ", sale_group_code=" + sale_group_code + ", personal_code=" + personal_code + ", staff_name=" + staff_name + ", curent_rank=" + curent_rank + ", begin_rank=" + begin_rank + ", begin_time=" + begin_time + ", id_last_four=" + id_last_four + ", renewal_history=" + renewal_history + ", direct_group_count=" + direct_group_count + ", history_num_1=" + history_num_1 + ", indirect_group_count=" + indirect_group_count + ", history_num_2=" + history_num_2 + ", subordinate_part_num=" + subordinate_part_num + ", history_num_3=" + history_num_3 + ", other_income_percent=" + other_income_percent + ", history_num_4=" + history_num_4 + ", str1=" + str1 + ", str2=" + str2 + ", str3=" + str3 + ", str4=" + str4 + ", str5=" + str5 + ", str6=" + str6 + ", str7=" + str7 + ", str8=" + str8 + ", str9=" + str9 + ", str10=" + str10 + ", str11=" + str11 + ", str12=" + str12 + '}';
+        return "Staffentity{" + "id=" + id + ", parentId=" + parentId + ", name=" + name + ", parentName=" + parentName + ", category=" + category + ", description=" + description + ", type=" + type + ", status=" + status + ", creator=" + creator + ", lastModifier=" + lastModifier + ", createTime=" + createTime + ", lastUpdateTime=" + lastUpdateTime + ", enabled=" + enabled + ", valid=" + valid + ", deleted=" + deleted + ", priority=" + priority + ", modifyCount=" + modifyCount + ", institution=" + institution + ", sale_department_code=" + sale_department_code + ", sale_group_code=" + sale_group_code + ", personal_code=" + personal_code + ", staff_name=" + staff_name + ", curent_rank=" + curent_rank + ", begin_rank=" + begin_rank + ", begin_time=" + begin_time + ", id_last_four=" + id_last_four + ", str1=" + str1 + ", str2=" + str2 + ", str3=" + str3 + ", str4=" + str4 + ", str5=" + str5 + ", str6=" + str6 + ", str7=" + str7 + ", str8=" + str8 + ", str9=" + str9 + ", str10=" + str10 + ", str11=" + str11 + ", str12=" + str12 + '}';
     }
     
     

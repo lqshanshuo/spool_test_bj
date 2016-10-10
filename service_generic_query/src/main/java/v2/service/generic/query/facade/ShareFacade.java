@@ -18,7 +18,7 @@ import v2.service.generic.query.entity.Share;
 @Stateless
 public class ShareFacade extends AbstractFacade<Share> {
 
-    @PersistenceContext(unitName = "queryPU")
+    @PersistenceContext(unitName = "queryPU_bj")
     private EntityManager em;
 
     @Override

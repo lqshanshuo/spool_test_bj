@@ -34,7 +34,7 @@ import v2.service.generic.query.entity.Genericentity;
 @Stateless
 public class QueryService {
 
-    @PersistenceContext(unitName = "queryPU")
+    @PersistenceContext(unitName = "queryPU_bj")
     private EntityManager em;
 
     protected EntityManager getEntityManager() {
