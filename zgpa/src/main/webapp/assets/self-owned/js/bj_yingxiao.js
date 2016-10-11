@@ -367,15 +367,22 @@ function getTrainningAllowance(yingXiaoViewModel) {
 //    var time = yingXiaoViewModel.userPOJO().institution;
 //    var performance = yingXiaoViewModel.userPOJO().institution;
 
-    var time = "20161021";
-    var performance = 2300;
+//    var time = "20161021";
+    var time = yingXiaoViewModel.userPOJO().begin_time.split("-") || [];
+    var performance = yingXiaoViewModel.person.initial_commission();
 
     var allowance = 0;
-//    var time_arr = time.split("/") || [];
-//    console.log("time_arr = " + time_arr);
-    var year = Number(time.substr(0, 4)) || 0;
-    var month = Number(time.substr(4, 2)) || 0;
+    var year = Number(time[0]) || 0;
+    var month = Number(time[1]) || 0;
     var type = 0;
+    if("优才计划".equals(yingXiaoViewModel.userPOJO().str1)){
+        type = 1;
+    }else if("[00]".equals(yingXiaoViewModel.userPOJO().begin_rank)){
+        type = 2;
+    }else if("[01]".equals(yingXiaoViewModel.userPOJO().begin_rank)){
+        type = 3;
+    }
+    
 
     //加上下面一句
     month = 14 - month;
