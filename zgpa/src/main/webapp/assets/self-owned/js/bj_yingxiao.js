@@ -189,8 +189,8 @@ function Person() {
         if (yingXiaoViewModel) {
             yingXiaoViewModel.group.initial_commission(commission);
             yingXiaoViewModel.part.initial_commission(commission);
+            self.trainning_allowance(getTrainningAllowance(yingXiaoViewModel)); //训练津贴
         }
-        self.trainning_allowance(getTrainningAllowance(yingXiaoViewModel)); //训练津贴
     });
     self.renewal_commission.subscribe(function (newValue) {
         if (!newValue) {
@@ -226,8 +226,8 @@ function Person() {
         if (yingXiaoViewModel) {
             yingXiaoViewModel.group.initial_commission(commission);
             yingXiaoViewModel.part.initial_commission(commission);
+            self.trainning_allowance(getTrainningAllowance(yingXiaoViewModel)); //训练津贴
         }
-        self.trainning_allowance(getTrainningAllowance(yingXiaoViewModel)); //训练津贴
 
         return commission;
     }, this);
@@ -375,14 +375,15 @@ function getTrainningAllowance(yingXiaoViewModel) {
     var year = Number(time[0]) || 0;
     var month = Number(time[1]) || 0;
     var type = 0;
-    if("优才计划".equals(yingXiaoViewModel.userPOJO().str1)){
+    console.log(year+""+month)
+    if("优才计划"==yingXiaoViewModel.userPOJO().str1){
         type = 1;
-    }else if("[00]".equals(yingXiaoViewModel.userPOJO().begin_rank)){
+    }else if("[00]"==yingXiaoViewModel.userPOJO().begin_rank){
         type = 2;
-    }else if("[01]".equals(yingXiaoViewModel.userPOJO().begin_rank)){
+    }else if("[01]"==yingXiaoViewModel.userPOJO().begin_rank){
         type = 3;
     }
-    
+    console.log(type)
 
     //加上下面一句
     month = 14 - month;
