@@ -19,7 +19,7 @@ import v2.zgpa.model.Yingxiaostaffentity;
 @Stateless
 public class LoginFacade extends AbstractFacade<Object> {
 
-    @PersistenceContext(unitName = "queryPU")
+    @PersistenceContext(unitName = "queryPU_bj")
     private EntityManager em;
 
     @Override
