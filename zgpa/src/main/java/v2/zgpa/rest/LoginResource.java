@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import javax.ejb.EJB;
 import javax.ejb.Stateless;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -34,6 +35,8 @@ public class LoginResource {
 
     private static final String Succeesed = "SUCCEESED";
     private static final String Failed = "FAILED";
+    @EJB
+    LoginManager loginManager;
 
     @POST
     @Path("login")
@@ -56,11 +59,11 @@ public class LoginResource {
         if ("YINGXIAO".equals(staff_type) || "QUTUO".equals(staff_type)) {
             System.out.println(personal_code);
             System.out.println(passwd);
-            response = LoginManager.login(personal_code, passwd, staff_type, key);
+            response = loginManager.login(personal_code, passwd, staff_type, key);
         } else if ("YINGXIAO_OR_QUTUO".equals(staff_type)) {
-            response = LoginManager.login(personal_code, passwd, "YINGXIAO", key);
+            response = loginManager.login(personal_code, passwd, "YINGXIAO", key);
             if (response.getHasError() && "业务代码不存在".equals(response.getErrorMessage())) {
-                response = LoginManager.login(personal_code, passwd, "QUTUO", key);
+                response = loginManager.login(personal_code, passwd, "QUTUO", key);
             }
         } else {
             response = new ResponsePOJO(true, "未知登录类型", Service_Failed, Failed, new ArrayList());
