@@ -52,6 +52,7 @@ public class Qutuostaffentity implements Serializable {
 //---------------------------generic attributes end ----------------------------
 //---------------------------special attributes start --------------------------
     private String institution;                         //机构
+    private String institution_code;                    //机构
     private String zhanyechu_code;                      //展业处代码
     private String zhanyeke_code;                       //展业课代码
     private String zhanyequ_code;                       //展业区代码
@@ -59,15 +60,8 @@ public class Qutuostaffentity implements Serializable {
     private String staff_name;                          //姓名
     private String sex;                                 //性别
     private String begin_time;                          //入司时间
+    private String birthday;                            //生日
     private String curent_rank;                         //职级
-    private String id_last_four;                        //证件号后四位
-    private String renewal_history;                     //续期历史数据
-
-    private String educate_benefits;                    //育成利益
-    private String zengke_benefits;                     //增课利益
-    private String zengchu_benefits;                    //增处利益
-    private String development_allowance;               //区部发展津贴
-    private String other_income_percent;                //其他收入占比
 
     private String str1;
     private String str2;
@@ -79,14 +73,6 @@ public class Qutuostaffentity implements Serializable {
     private String str8;
     private String str9;
     private String str10;
-
-    @Size(max = 2147483647)
-    @Column(name = "str11")
-    private String str11;
-
-    @Size(max = 2147483647)
-    @Column(name = "str12")
-    private String str12;
 
     public Long getId() {
         return id;
@@ -232,6 +218,14 @@ public class Qutuostaffentity implements Serializable {
         this.institution = institution;
     }
 
+    public String getInstitution_code() {
+        return institution_code;
+    }
+
+    public void setInstitution_code(String institution_code) {
+        this.institution_code = institution_code;
+    }
+
     public String getZhanyechu_code() {
         return zhanyechu_code;
     }
@@ -288,68 +282,20 @@ public class Qutuostaffentity implements Serializable {
         this.begin_time = begin_time;
     }
 
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
+    }
+
     public String getCurent_rank() {
         return curent_rank;
     }
 
     public void setCurent_rank(String curent_rank) {
         this.curent_rank = curent_rank;
-    }
-
-    public String getId_last_four() {
-        return id_last_four;
-    }
-
-    public void setId_last_four(String id_last_four) {
-        this.id_last_four = id_last_four;
-    }
-
-    public String getRenewal_history() {
-        return renewal_history;
-    }
-
-    public void setRenewal_history(String renewal_history) {
-        this.renewal_history = renewal_history;
-    }
-
-    public String getEducate_benefits() {
-        return educate_benefits;
-    }
-
-    public void setEducate_benefits(String educate_benefits) {
-        this.educate_benefits = educate_benefits;
-    }
-
-    public String getZengke_benefits() {
-        return zengke_benefits;
-    }
-
-    public void setZengke_benefits(String zengke_benefits) {
-        this.zengke_benefits = zengke_benefits;
-    }
-
-    public String getZengchu_benefits() {
-        return zengchu_benefits;
-    }
-
-    public void setZengchu_benefits(String zengchu_benefits) {
-        this.zengchu_benefits = zengchu_benefits;
-    }
-
-    public String getDevelopment_allowance() {
-        return development_allowance;
-    }
-
-    public void setDevelopment_allowance(String development_allowance) {
-        this.development_allowance = development_allowance;
-    }
-
-    public String getOther_income_percent() {
-        return other_income_percent;
-    }
-
-    public void setOther_income_percent(String other_income_percent) {
-        this.other_income_percent = other_income_percent;
     }
 
     public String getStr1() {
@@ -432,45 +378,20 @@ public class Qutuostaffentity implements Serializable {
         this.str10 = str10;
     }
 
-    public String getStr11() {
-        return str11;
-    }
-
-    public void setStr11(String str11) {
-        this.str11 = str11;
-    }
-
-    public String getStr12() {
-        return str12;
-    }
-
-    public void setStr12(String str12) {
-        this.str12 = str12;
-    }
-    
-    
-
-
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 17 * hash + Objects.hashCode(this.name);
-        hash = 17 * hash + Objects.hashCode(this.parentName);
-        hash = 17 * hash + Objects.hashCode(this.category);
-        hash = 17 * hash + Objects.hashCode(this.description);
-        hash = 17 * hash + Objects.hashCode(this.type);
-        hash = 17 * hash + Objects.hashCode(this.status);
-        hash = 17 * hash + Objects.hashCode(this.institution);
-        hash = 17 * hash + Objects.hashCode(this.zhanyechu_code);
-        hash = 17 * hash + Objects.hashCode(this.zhanyeke_code);
-        hash = 17 * hash + Objects.hashCode(this.zhanyequ_code);
-        hash = 17 * hash + Objects.hashCode(this.staff_name);
-        hash = 17 * hash + Objects.hashCode(this.sex);
-        hash = 17 * hash + Objects.hashCode(this.begin_time);
-        hash = 17 * hash + Objects.hashCode(this.curent_rank);
-        hash = 17 * hash + Objects.hashCode(this.id_last_four);
-        hash = 17 * hash + Objects.hashCode(this.renewal_history);
-        hash = 17 * hash + Objects.hashCode(this.educate_benefits);
+        int hash = 5;
+        hash = 83 * hash + Objects.hashCode(this.id);
+        hash = 83 * hash + Objects.hashCode(this.institution);
+        hash = 83 * hash + Objects.hashCode(this.institution_code);
+        hash = 83 * hash + Objects.hashCode(this.zhanyechu_code);
+        hash = 83 * hash + Objects.hashCode(this.zhanyeke_code);
+        hash = 83 * hash + Objects.hashCode(this.zhanyequ_code);
+        hash = 83 * hash + Objects.hashCode(this.personal_code);
+        hash = 83 * hash + Objects.hashCode(this.staff_name);
+        hash = 83 * hash + Objects.hashCode(this.sex);
+        hash = 83 * hash + Objects.hashCode(this.birthday);
+        hash = 83 * hash + Objects.hashCode(this.curent_rank);
         return hash;
     }
 
@@ -489,6 +410,9 @@ public class Qutuostaffentity implements Serializable {
         if (!Objects.equals(this.institution, other.institution)) {
             return false;
         }
+        if (!Objects.equals(this.institution_code, other.institution_code)) {
+            return false;
+        }
         if (!Objects.equals(this.zhanyechu_code, other.zhanyechu_code)) {
             return false;
         }
@@ -496,6 +420,9 @@ public class Qutuostaffentity implements Serializable {
             return false;
         }
         if (!Objects.equals(this.zhanyequ_code, other.zhanyequ_code)) {
+            return false;
+        }
+        if (!Objects.equals(this.personal_code, other.personal_code)) {
             return false;
         }
         if (!Objects.equals(this.staff_name, other.staff_name)) {
@@ -507,28 +434,10 @@ public class Qutuostaffentity implements Serializable {
         if (!Objects.equals(this.begin_time, other.begin_time)) {
             return false;
         }
+        if (!Objects.equals(this.birthday, other.birthday)) {
+            return false;
+        }
         if (!Objects.equals(this.curent_rank, other.curent_rank)) {
-            return false;
-        }
-        if (!Objects.equals(this.id_last_four, other.id_last_four)) {
-            return false;
-        }
-        if (!Objects.equals(this.renewal_history, other.renewal_history)) {
-            return false;
-        }
-        if (!Objects.equals(this.educate_benefits, other.educate_benefits)) {
-            return false;
-        }
-        if (!Objects.equals(this.zengke_benefits, other.zengke_benefits)) {
-            return false;
-        }
-        if (!Objects.equals(this.zengchu_benefits, other.zengchu_benefits)) {
-            return false;
-        }
-        if (!Objects.equals(this.development_allowance, other.development_allowance)) {
-            return false;
-        }
-        if (!Objects.equals(this.other_income_percent, other.other_income_percent)) {
             return false;
         }
         if (!Objects.equals(this.id, other.id)) {
@@ -539,8 +448,7 @@ public class Qutuostaffentity implements Serializable {
 
     @Override
     public String toString() {
-        return "Qutuostaffentity{" + "id=" + id + ", parentId=" + parentId + ", name=" + name + ", parentName=" + parentName + ", category=" + category + ", description=" + description + ", type=" + type + ", status=" + status + ", creator=" + creator + ", lastModifier=" + lastModifier + ", createTime=" + createTime + ", lastUpdateTime=" + lastUpdateTime + ", enabled=" + enabled + ", valid=" + valid + ", deleted=" + deleted + ", priority=" + priority + ", modifyCount=" + modifyCount + ", institution=" + institution + ", zhanyechu_code=" + zhanyechu_code + ", zhanyeke_code=" + zhanyeke_code + ", zhanyequ_code=" + zhanyequ_code + ", personal_code=" + personal_code + ", staff_name=" + staff_name + ", sex=" + sex + ", begin_time=" + begin_time + ", curent_rank=" + curent_rank + ", id_last_four=" + id_last_four + ", renewal_history=" + renewal_history + ", educate_benefits=" + educate_benefits + ", zengke_benefits=" + zengke_benefits + ", zengchu_benefits=" + zengchu_benefits + ", development_allowance=" + development_allowance + ", other_income_percent=" + other_income_percent + ", str1=" + str1 + ", str2=" + str2 + ", str3=" + str3 + ", str4=" + str4 + ", str5=" + str5 + ", str6=" + str6 + ", str7=" + str7 + ", str8=" + str8 + ", str9=" + str9 + ", str10=" + str10 + ", str11=" + str11 + ", str12=" + str12 + '}';
+        return "Qutuostaffentity{" + "id=" + id + ", parentId=" + parentId + ", name=" + name + ", parentName=" + parentName + ", category=" + category + ", description=" + description + ", type=" + type + ", status=" + status + ", creator=" + creator + ", lastModifier=" + lastModifier + ", createTime=" + createTime + ", lastUpdateTime=" + lastUpdateTime + ", enabled=" + enabled + ", valid=" + valid + ", deleted=" + deleted + ", priority=" + priority + ", modifyCount=" + modifyCount + ", institution=" + institution + ", institution_code=" + institution_code + ", zhanyechu_code=" + zhanyechu_code + ", zhanyeke_code=" + zhanyeke_code + ", zhanyequ_code=" + zhanyequ_code + ", personal_code=" + personal_code + ", staff_name=" + staff_name + ", sex=" + sex + ", begin_time=" + begin_time + ", birthday=" + birthday + ", curent_rank=" + curent_rank + ", str1=" + str1 + ", str2=" + str2 + ", str3=" + str3 + ", str4=" + str4 + ", str5=" + str5 + ", str6=" + str6 + ", str7=" + str7 + ", str8=" + str8 + ", str9=" + str9 + ", str10=" + str10 + '}';
     }
-
 
 }
