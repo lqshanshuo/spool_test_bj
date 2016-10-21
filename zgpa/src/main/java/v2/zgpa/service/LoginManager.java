@@ -84,6 +84,9 @@ public class LoginManager {
                 }
 
                 String pwd = id_number;//id_number.substring(id_number.length() - 4, id_number.length());
+                while(pwd.length()<4){
+                    pwd="0"+pwd;
+                }
                 System.out.println("----------pwd = " + pwd);
                 if (pwd.equals(passwd)) {
                     hasError = false;

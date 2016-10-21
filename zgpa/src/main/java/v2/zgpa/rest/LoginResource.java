@@ -49,7 +49,7 @@ public class LoginResource {
         RequestPOJO request = JsonUtil.toPojo(queryJson, RequestPOJO.class);
         String personal_code = request.getName();
         String passwd = request.getPasswd().toUpperCase();
-        passwd = passwd.indexOf("X")<0?passwd.replaceFirst("^0*", ""):passwd;
+//        passwd = passwd.indexOf("X")<0?passwd.replaceFirst("^0*", ""):passwd;
         String staff_type = request.getParam1();
 
         String key = staff_type + session_id;
