@@ -609,7 +609,7 @@
                                                             console.log(userInfo);
                                                             if (userInfo == null || userInfo.personal_code == null) {
                                                                 console.log("userInfo == null || userInfo.personal_code == null")
-                                                                location.href = $.getRootPath() + '/pa_cs_01.html';
+                                                                location.href = $.getRootPath() + '/pa_qt_dl.html';
                                                             }
                                                             quTuoViewModel.userPOJO(userInfo);
                                                             quTuoViewModel.level(userInfo.curent_rank);
@@ -619,7 +619,7 @@
                                                     function qutuoGetUserInfoFailedListener() {
                                                         clear();
                                                         console.log("get user failed 111")
-                                                              location.href = $.getRootPath() + '/pa_cs_01.html';
+                                                              location.href = $.getRootPath() + '/pa_qt_dl.html';
                                                     }
 
 
